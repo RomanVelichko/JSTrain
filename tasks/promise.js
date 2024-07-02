@@ -125,4 +125,29 @@ function testAnimation() {
 console.log("test", testAnimation()); // timeout1, promise, timeout2
 
 // ------------ // ------------ // ------------ // ------------ //
+
+console.log(1)
+setTimeout((()=>console.log(0)),1)
+
+Promise.resolve()
+.then(()=>console.log(2))
+.then(()=>console.log(3))
+.then(()=>console.log(4))
+.then(()=>{throw new Error()})
+.catch(()=>console.log(5))
+
+// 1, 2, 3, 4, 5, 0
+
 // ------------ // ------------ // ------------ // ------------ //
+
+console.log(1)
+setTimeout((()=>console.log(0)),1)
+
+Promise.resolve()
+.then(()=>console.log(2))
+.then(()=>fetch())
+.then(()=>console.log(4))
+.then(()=>{throw new Error()})
+.catch(()=>console.log(5))
+
+// 1, 2, 5, 0
