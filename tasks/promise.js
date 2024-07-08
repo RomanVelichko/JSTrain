@@ -151,3 +151,18 @@ Promise.resolve()
 .catch(()=>console.log(5))
 
 // 1, 2, 5, 0
+
+
+// ------------ // ------------ // ------------ // ------------ //
+
+console.log(1);
+setTimeout(() => console.log(3), 0);
+Promise.resolve().then(() => console.log(4)) 
+Promise.resolve().then(() => setTimeout(() => console.log(5), 0)) 
+Promise.resolve().then(() => console.log(7)) 
+setTimeout(() => console.log(9), 0);
+console.log(10);
+
+// 1, 10, 4, 7, 3, 9, 5
+
+// ------------ // ------------ // ------------ // ------------ //

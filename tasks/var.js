@@ -14,5 +14,3 @@ function foo() {
 
 var bar = foo().bind({a: 45});
 bar()
-
-// будет 25

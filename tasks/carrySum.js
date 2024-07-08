@@ -10,7 +10,7 @@ function sum(num){
   console.log(res)
   return function func() {
     res = res + arguments[0]
-    console.log('console: ',res)
+    console.log(res)
     return func
   }
 }
